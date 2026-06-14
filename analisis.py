@@ -49,21 +49,24 @@ def analizar_perfil():
 
     print(f"=== REPOSITORIOS FORK ({len(forks)}) ===")
     for repo in forks:
-        print(f"Fork: {repo['name']}")
+        anio = repo["created_at"][:4]
+        print(f"Fork: {repo['name']} ({anio})")
         print(f"   URL: {repo['html_url']}")
         print(f"   Tamaño: {repo['size']} KB")
         print("-" * 50)
 
-    print(f"\n=== REPOSITORIOS PRIVADOS ORDENADOS POR TAMAÑO ({len(privados)}) ===")
+    print(f"\n=== REPOSITORIOS PRIVADOS ({len(privados)}) ===")
     for repo in privados:
-        print(f"Privado: {repo['name']}")
+        anio = repo["created_at"][:4]
+        print(f"Privado: {repo['name']} ({anio})")
         print(f"   URL: {repo['html_url']}")
         print(f"   Tamaño: {repo['size']} KB")
         print("-" * 50)
 
-    print(f"\n=== REPOSITORIOS PÚBLICOS ORDENADOS POR TAMAÑO ({len(publicos)}) ===")
+    print(f"\n=== REPOSITORIOS PÚBLICOS ({len(publicos)}) ===")
     for repo in publicos:
-        print(f"Público: {repo['name']}")
+        anio = repo["created_at"][:4]
+        print(f"Público: {repo['name']} ({anio})")
         print(f"   URL: {repo['html_url']}")
         print(f"   Tamaño: {repo['size']} KB")
         print("-" * 50)
